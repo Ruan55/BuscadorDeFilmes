@@ -1,0 +1,172 @@
+:root{
+
+    --primary-color: #032541; /* Azul escuro do TMDB */
+    --secondary-color: #01b4e4; /* Azul claro */
+    --text-color: #333;
+    --bg-color: #f1f1f1;
+    --card-bg: #fff;
+
+}
+
+*{
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+
+body{
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+
+}
+
+/* Header e Formulário de Busca */
+header{
+
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+header h1{
+
+    margin-bottom: 15px;
+
+}
+
+#search-form{
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+#search-input{
+
+
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    width: 70%;
+    max-width: 400px;
+    font-size: 16px;
+
+}
+
+#search-form button{
+
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+#search-form button:hover{
+
+    background-color: #0088ad; /* Tonalidade mais escura do azul secundário */
+
+}
+
+/* Área de resultados */
+#movie-results{
+
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+
+}
+
+.initial-message, .error-message{
+
+    grid-column: 1 / -1; /* Ocupa todas as colunas */
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    padding: 40px;
+
+}
+
+/* Card de filme */
+.movie-card{
+
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+
+}
+
+.movie-card:hover{
+
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+.movie-card img{
+
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: 375px; /* Altura pardrão para pôsters */
+    object-fit: cover;
+
+}
+
+.movie-info{
+
+    padding: 15px;
+
+}
+
+.movie-info h3{
+
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+
+}
+
+.movie-info p{
+
+    font-size: 0.9em;
+    color: #666;
+
+}
+
+/* Responsividade básica */
+@media (max-width: 600px){
+
+    #search-form{
+
+        flex-direction: column;
+        gap: 5px;
+
+    }
+
+    #search-input, #search-form button{
+
+        width: 100%;
+        max-width: none;
+
+    }
+
+}
